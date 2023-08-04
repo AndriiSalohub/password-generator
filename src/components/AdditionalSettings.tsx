@@ -8,7 +8,7 @@ type TAdditionalSettings = {
 };
 
 export const AdditionalSettings: FC = () => {
-    const [settings, setsettings] = useState<TAdditionalSettings>({
+    const [settings, setSettings] = useState<TAdditionalSettings>({
         upper: false,
         lower: false,
         number: false,
@@ -16,13 +16,11 @@ export const AdditionalSettings: FC = () => {
     });
 
     const handleSelect = (e: ChangeEvent<HTMLInputElement>) => {
-        setsettings((state) => ({
+        setSettings((state) => ({
             ...state,
             [e.target.name]: e.target.checked,
         }));
     };
-
-    console.log(value);
 
     return (
         <>
