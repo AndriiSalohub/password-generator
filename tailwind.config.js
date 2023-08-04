@@ -6,10 +6,11 @@ export default {
         extend: {
             backgroundColor: {
                 primary: "#131219",
+                secondary: "#24232b",
             },
             fontFamily: {
                 primary: "Inter, sans-serif",
-                secondary: "Ubuntu, sans-serif",
+                secondary: "Roboto, sans-serif",
             },
         },
     },
