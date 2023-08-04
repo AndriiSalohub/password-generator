@@ -7,9 +7,10 @@ export default {
             backgroundColor: {
                 primary: "#131219",
                 secondary: "#24232b",
+                strength: "#f7cd69",
             },
             fontFamily: {
-                primary: "Roboto, sans-serif",
+                primary: "Kanit, sans-serif",
                 secondary: "Ubuntu, sans-serif",
             },
             colors: {

@@ -32,7 +32,7 @@ export const AdditionalSettings: FC = () => {
                     name="upper"
                     onChange={(e) => handleSelect(e)}
                 />{" "}
-                <span className="font-primary text-sm text-white ml-2">
+                <span className="font-primary text-md text-white ml-2">
                     Include Uppercase Letters
                 </span>
             </div>
@@ -43,7 +43,7 @@ export const AdditionalSettings: FC = () => {
                     className="appearance-none w-4 h-4 border text-primary checked:bg-blue-500 checked:text-white relative after:content-[''] after:w-full after:h-full after:top-3 after:left-2"
                     name="lower"
                 />{" "}
-                <span className="font-primary text-sm text-white ml-2">
+                <span className="font-primary text-md text-white ml-2">
                     Include Lowercase Letters
                 </span>
             </div>
@@ -54,7 +54,7 @@ export const AdditionalSettings: FC = () => {
                     className="appearance-none w-4 h-4 border text-primary checked:bg-blue-500 checked:text-white relative after:content-[''] after:w-full after:h-full after:top-3 after:left-2"
                     name="numbers"
                 />{" "}
-                <span className="font-primary text-sm text-white ml-2">
+                <span className="font-primary text-md text-white ml-2">
                     Include Numbers
                 </span>
             </div>
@@ -65,7 +65,7 @@ export const AdditionalSettings: FC = () => {
                     className="appearance-none w-4 h-4 border text-primary checked:bg-blue-500 checked:text-white relative after:content-[''] after:w-full after:h-full after:top-3 after:left-2"
                     name="symbols"
                 />{" "}
-                <span className="font-primary text-sm text-white ml-2">
+                <span className="font-primary text-md text-white ml-2">
                     Include Symbols
                 </span>
             </div>
