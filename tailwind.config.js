@@ -9,8 +9,11 @@ export default {
                 secondary: "#24232b",
             },
             fontFamily: {
-                primary: "Inter, sans-serif",
-                secondary: "Roboto, sans-serif",
+                primary: "Roboto, sans-serif",
+                secondary: "Ubuntu, sans-serif",
+            },
+            colors: {
+                secondary: "#a4ffaf",
             },
         },
     },
