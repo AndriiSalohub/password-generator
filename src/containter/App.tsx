@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { PasswordInput } from "../components/PasswordInput";
+import { PasswordSettings } from "../components/PasswordSettings";
 
 export const App: FC = () => {
     return (
@@ -8,6 +9,7 @@ export const App: FC = () => {
                 Password Generator
             </h1>
             <PasswordInput />
+            <PasswordSettings />
         </>
     );
 };
