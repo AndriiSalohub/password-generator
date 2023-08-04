@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { AdditionalSettings } from "./AdditionalSettings";
+import { GenerateBtn } from "./GenerateBtn";
 import { PasswordLength } from "./PasswordLength";
 import { PasswordStrength } from "./PasswordStrength";
 
@@ -9,6 +10,7 @@ export const PasswordSettings: FC = () => {
             <PasswordLength />
             <AdditionalSettings />
             <PasswordStrength />
+            <GenerateBtn />
         </div>
     );
 };

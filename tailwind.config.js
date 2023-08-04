@@ -8,6 +8,7 @@ export default {
                 primary: "#131219",
                 secondary: "#24232b",
                 strength: "#f7cd69",
+                succsess: "#a4ffaf",
             },
             fontFamily: {
                 primary: "Kanit, sans-serif",
@@ -19,6 +20,9 @@ export default {
             },
             fontSize: {
                 md: "16px",
+            },
+            borderColor: {
+                primary: "#a4ffaf",
             },
         },
     },
