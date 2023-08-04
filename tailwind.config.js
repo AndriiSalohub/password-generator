@@ -13,7 +13,11 @@ export default {
                 secondary: "Ubuntu, sans-serif",
             },
             colors: {
+                primary: "#24232b",
                 secondary: "#a4ffaf",
+            },
+            fontSize: {
+                md: "16px",
             },
         },
     },
