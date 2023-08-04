@@ -1,8 +1,11 @@
 import { FC, useState } from "react";
+import { useStore } from "../store/store";
 import "./PasswordLength.css";
 
 export const PasswordLength: FC = () => {
     const [value, setValue] = useState<number>(0);
+
+    const { setPasswordLength } = useStore();
 
     return (
         <>
@@ -19,7 +22,10 @@ export const PasswordLength: FC = () => {
                 min={0}
                 max={15}
                 step={1}
-                onChange={(e) => setValue(+e.target.value)}
+                onChange={(e) => {
+                    setValue(+e.target.value);
+                    setPasswordLength(+e.target.value);
+                }}
             />
         </>
     );
