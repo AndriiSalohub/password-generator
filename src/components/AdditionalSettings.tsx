@@ -1,26 +1,8 @@
-import { ChangeEvent, FC, useState } from "react";
-
-type TAdditionalSettings = {
-    upper: boolean;
-    lower: boolean;
-    number: boolean;
-    symbols: boolean;
-};
+import { FC } from "react";
+import { useStore } from "../store/store";
 
 export const AdditionalSettings: FC = () => {
-    const [settings, setSettings] = useState<TAdditionalSettings>({
-        upper: false,
-        lower: false,
-        number: false,
-        symbols: false,
-    });
-
-    const handleSelect = (e: ChangeEvent<HTMLInputElement>) => {
-        setSettings((state) => ({
-            ...state,
-            [e.target.name]: e.target.checked,
-        }));
-    };
+    const store = useStore();
 
     return (
         <>
@@ -29,8 +11,8 @@ export const AdditionalSettings: FC = () => {
                 <input
                     type="checkbox"
                     className="appearance-none w-4 h-4 border text-primary checked:bg-blue-500 checked:text-white relative after:content-[''] after:w-full after:h-full after:top-3 after:left-2"
-                    name="upper"
-                    onChange={(e) => handleSelect(e)}
+                    name="includeUpper"
+                    onChange={(e) => store.handleSelect(e)}
                 />{" "}
                 <span className="font-primary text-md text-white ml-2">
                     Include Uppercase Letters
@@ -41,7 +23,8 @@ export const AdditionalSettings: FC = () => {
                 <input
                     type="checkbox"
                     className="appearance-none w-4 h-4 border text-primary checked:bg-blue-500 checked:text-white relative after:content-[''] after:w-full after:h-full after:top-3 after:left-2"
-                    name="lower"
+                    name="includeLower"
+                    onChange={(e) => store.handleSelect(e)}
                 />{" "}
                 <span className="font-primary text-md text-white ml-2">
                     Include Lowercase Letters
@@ -52,7 +35,8 @@ export const AdditionalSettings: FC = () => {
                 <input
                     type="checkbox"
                     className="appearance-none w-4 h-4 border text-primary checked:bg-blue-500 checked:text-white relative after:content-[''] after:w-full after:h-full after:top-3 after:left-2"
-                    name="numbers"
+                    name="includeNumbers"
+                    onChange={(e) => store.handleSelect(e)}
                 />{" "}
                 <span className="font-primary text-md text-white ml-2">
                     Include Numbers
@@ -63,7 +47,8 @@ export const AdditionalSettings: FC = () => {
                 <input
                     type="checkbox"
                     className="appearance-none w-4 h-4 border text-primary checked:bg-blue-500 checked:text-white relative after:content-[''] after:w-full after:h-full after:top-3 after:left-2"
-                    name="symbols"
+                    name="includeSymbols"
+                    onChange={(e) => store.handleSelect(e)}
                 />{" "}
                 <span className="font-primary text-md text-white ml-2">
                     Include Symbols
