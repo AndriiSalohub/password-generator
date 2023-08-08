@@ -16,7 +16,6 @@ export const GenerateBtn: FC = () => {
         includeSymbols,
         setPassword,
         passwordLength,
-        password,
     } = useStore();
 
     const handlePassword = () => {
