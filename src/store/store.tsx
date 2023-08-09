@@ -1,22 +1,25 @@
 import { ChangeEvent } from "react";
 import { create } from "zustand";
 
-type TStore = {
+type State = {
     password: string;
     passwordLength: number;
     includeUpper: boolean;
     includeLower: boolean;
     includeNumbers: boolean;
     includeSymbols: boolean;
-    handleSelect: (e: ChangeEvent<HTMLInputElement>) => void;
     isGenerated: boolean;
     strength: string;
-    checkStrength: () => void;
-    setPassword: (newPassword: string) => void;
-    setPasswordLength: (length: number) => void;
 };
 
-export const useStore = create<TStore>((set) => ({
+type Actions = {
+    handleSelect: (e: ChangeEvent<HTMLInputElement>) => void;
+    checkStrength: () => void;
+    setPassword: (newPassword: State["password"]) => void;
+    setPasswordLength: (length: State["passwordLength"]) => void;
+};
+
+export const useStore = create<State & Actions>((set) => ({
     password: "",
     passwordLength: 0,
     includeUpper: false,
@@ -26,13 +29,12 @@ export const useStore = create<TStore>((set) => ({
     isGenerated: false,
     strength: "",
     handleSelect: (e: ChangeEvent<HTMLInputElement>) =>
-        set((state) => ({
-            ...state,
+        set(() => ({
             [e.target.name]: e.target.checked,
         })),
+
     checkStrength: () =>
         set((state) => ({
-            ...state,
             strength:
                 /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/.test(
                     state.password
@@ -44,14 +46,14 @@ export const useStore = create<TStore>((set) => ({
                     ? "medium"
                     : "weak",
         })),
+
     setPassword: (newPassword) =>
-        set((state) => ({
-            ...state,
+        set(() => ({
             password: newPassword,
         })),
+
     setPasswordLength: (length) =>
-        set((state) => ({
-            ...state,
+        set(() => ({
             passwordLength: length,
         })),
 }));
